@@ -85,28 +85,4 @@ public class BusinessTrip extends Item {
         this.description = description;
     }
 
-
-    public String getSummary() {
-        return summary;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public User getCreator() {
-        return creator;
-    }
-
-    public User getActionPerfomer() {
-        return actionPerfomer;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
-    public String getProjectName() {
-        return projectName;
-    }
 }
