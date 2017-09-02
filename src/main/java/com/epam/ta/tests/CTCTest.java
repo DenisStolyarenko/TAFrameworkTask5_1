@@ -1,5 +1,9 @@
 package com.epam.ta.tests;
 
+import com.epam.ta.framework.ui.application.business_objects.BusinessTrip;
+import com.epam.ta.framework.ui.application.commonconstants.AnyParameters;
+import com.epam.ta.framework.ui.application.enums.Projects;
+import com.epam.ta.framework.ui.application.enums.User;
 import com.epam.ta.framework.ui.application.steps.businesstrip.BusinessTripStep;
 import com.epam.ta.framework.ui.core.driver.Driver;
 import org.testng.Assert;
@@ -27,7 +31,9 @@ public class CTCTest {
 
     @Test(dependsOnMethods = "openListOfBT", description = "create new BT")
     public void createNewBt(){
-        businessTripStep.createBT();
+        BusinessTrip item = new BusinessTrip(AnyParameters.summary, User.T_USER, Projects.ENRC_TRD.getProjectName(),AnyParameters.estimatedBudget, AnyParameters.plannedStartDate, AnyParameters.plannedEndDate,
+                AnyParameters.locationFrom, AnyParameters.country, AnyParameters.destinationCity, AnyParameters.destinationAddress, AnyParameters.description);
+        businessTripStep.createBT(item);
         Assert.assertTrue(businessTripStep.checkBTid(), "Business Trip is not created");
     }
 

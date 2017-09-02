@@ -1,5 +1,6 @@
 package com.epam.ta.framework.ui.application.pages.dashboard;
 
+
 import com.epam.ta.framework.ui.application.pages.AbstractPage;
 import com.epam.ta.framework.ui.core.driver.Driver;
 import com.epam.ta.framework.ui.core.utils.Waiters;

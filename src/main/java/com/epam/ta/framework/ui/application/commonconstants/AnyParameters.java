@@ -1,4 +1,5 @@
-package com.epam.ta.framework.ui.application.other;
+package com.epam.ta.framework.ui.application.commonconstants;
+
 
 import com.epam.ta.framework.ui.core.utils.DateUtil;
 
