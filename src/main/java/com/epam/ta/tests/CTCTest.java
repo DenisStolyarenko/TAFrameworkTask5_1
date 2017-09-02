@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 
 public class CTCTest {
     private BusinessTripStep businessTripStep = new BusinessTripStep();
-
     private final String sectionName = "Business Trips";
 
 
@@ -26,7 +25,7 @@ public class CTCTest {
     @Test(dependsOnMethods = "loginTest", description = "check opening the list of Bussiness Trips")
     @Parameters({"baseUrl"})
     public void openListOfBT(String baseUrl) {
-        Assert.assertEquals(businessTripStep.openList(baseUrl), sectionName, "The section did not found");
+        Assert.assertEquals(businessTripStep.checkingNameOfOpenedItemList(baseUrl), sectionName, "The section did not found");
     }
 
     @Test(dependsOnMethods = "openListOfBT", description = "create new BT")
@@ -34,7 +33,7 @@ public class CTCTest {
         BusinessTrip item = new BusinessTrip(AnyParameters.summary, User.T_USER, Projects.ENRC_TRD.getProjectName(),AnyParameters.estimatedBudget, AnyParameters.plannedStartDate, AnyParameters.plannedEndDate,
                 AnyParameters.locationFrom, AnyParameters.country, AnyParameters.destinationCity, AnyParameters.destinationAddress, AnyParameters.description);
         businessTripStep.createBT(item);
-        Assert.assertTrue(businessTripStep.checkBTid(), "Business Trip is not created");
+        Assert.assertTrue(businessTripStep.checkingIDOfBusinessTrip(), "Business Trip is not created");
     }
 
     @Test(dependsOnMethods = "createNewBt", description = "submit BT")

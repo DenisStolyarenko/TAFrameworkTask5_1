@@ -8,8 +8,6 @@ import com.epam.ta.framework.ui.application.steps.BaseStep;
 public class BusinessTripStep extends BaseStep {
     private CreateBTPage createBTPage = new CreateBTPage();
     private BTListPage btListPage = new BTListPage();
-//    BusinessTrip item = new BusinessTrip(AnyParameters.summary, User.T_USER, Projects.ENRC_TRD.getProjectName(),AnyParameters.estimatedBudget, AnyParameters.plannedStartDate, AnyParameters.plannedEndDate,
-//            AnyParameters.locationFrom, AnyParameters.country, AnyParameters.destinationCity, AnyParameters.destinationAddress, AnyParameters.description);
 
     public BusinessTripStep() {
     }
@@ -29,13 +27,13 @@ public class BusinessTripStep extends BaseStep {
         createBTPage.saveItem();
     }
 
-    public String openList(String baseUrl){
+    public String checkingNameOfOpenedItemList(String baseUrl){
         btListPage.openBTlist(baseUrl);
         return btListPage.getListName();
     }
 
-    public boolean checkBTid(){
-        return createBTPage.countBTid() == 19;
+    public boolean checkingIDOfBusinessTrip(){
+        return createBTPage.quantityOfDigitsInIDnumber() == 19;
     }
 
     public boolean isSubmitted(){

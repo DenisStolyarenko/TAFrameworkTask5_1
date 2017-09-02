@@ -37,7 +37,6 @@ public class Driver {
                 instance.quit();
             } catch (Exception e) {
                 MyLogger.error("Cannot kill browser");
-//                MyLogger.error("Cannot kill browser");
             } finally {
                 instance = null;
             }

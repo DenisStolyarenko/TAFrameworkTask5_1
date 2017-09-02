@@ -67,7 +67,7 @@ public class CreateBTPage extends AbstractPage {
         ((JavascriptExecutor) Driver.getDriverInstance()).executeScript(executeString);
     }
 
-    public Integer countBTid(){
+    public Integer quantityOfDigitsInIDnumber(){
         return btGeneralInfoBlock.getBTid().length();
     }
 

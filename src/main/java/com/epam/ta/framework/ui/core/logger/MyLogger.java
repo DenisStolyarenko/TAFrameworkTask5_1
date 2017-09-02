@@ -9,10 +9,6 @@ public class MyLogger {
         logger.error(message);
     }
 
-    public static void error(String message, Throwable throwable) {
-        logger.error(message, throwable);
-    }
-
     public static void info(String message) {
         logger.info(message);
     }
